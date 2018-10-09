@@ -28,15 +28,17 @@ class Solution:
                 break
             if i > 0 and mix_list[i] == mix_list[i - 1]:
                 continue
-            
+
             j = i + 1
             k = len(mix_list) - 1
             while j < k:
                 # print(i, j ,k , mix_list[i], mix_list[j] , mix_list[k])
                 if mix_list[j] + mix_list[k] + mix_list[i] == 0:
                     output.append([mix_list[i], mix_list[j], mix_list[k]])
-                    while j < k and mix_list[j] == mix_list[j + 1]:j+=1
-                    while j < k and mix_list[k] == mix_list[k - 1]:k-=1
+                    while j < k and mix_list[j] == mix_list[j + 1]:
+                        j += 1
+                    while j < k and mix_list[k] == mix_list[k - 1]:
+                        k -= 1
                     j += 1
                     k -= 1
                 elif mix_list[i] + mix_list[j] + mix_list[k] < 0:
