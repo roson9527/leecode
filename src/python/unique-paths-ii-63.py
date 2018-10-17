@@ -39,8 +39,10 @@ class Solution:
 
         for i in range(1, n):
             for j in range(1, m):
-                left = dp[i-1][j] if obstacleGrid[i-1][j] != 1 else 0
-                up = dp[i][j-1] if obstacleGrid[i][j-1] != 1 else 0
+                if obstacleGrid[i][j] == 1:
+                    continue
+                left = dp[i-1][j]
+                up = dp[i][j-1]
                 # left + up
                 dp[i][j] = left + up
 
